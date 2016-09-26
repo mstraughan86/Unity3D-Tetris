@@ -1,0 +1,88 @@
+https://play.google.com/store/apps/details?id=com.ea.game.tetris2011_row&hl=en
+https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=tetris%20rpg
+
+
+
+
+
+
+tetris rpg
+
+
+hero traveling through a dungeon encountering monsters
+
+monster encounter is represented by blocks spawning on the grid
+
+each monster is a different block pattern
+
+clearing all the enemy blocks will defeat that encounter
+
+clearning lines gives exp
+
+clearning enemy blocks gives additional exp
+
+multiple enemies can spawn multiple block patterns
+
+there can be enviornmental blocks to deal with!
+
+character hero:
+
+hero has skills
+
+side swipe: attack all blocks from left to right
+down slash: attack all blocks from top to bottom
+
+attack will make blocks travel in the opposite direction of the strike
+
+different attack types will have different effects:
+- stop at colliding into 1 block, 2/3/etc
+- affects up to x blocks/lines
+- destroy blocks
+- push blocks
+- collide through blocks (impact block is destroyed)
+- fill blocks(?)
+
+Other skills:
+- spawn specific block (or series of blocks)
+- slow gravity
+- 
+
+Target by:
+- grid location
+- row
+- column
+- even/odd, range/quadrant
+- gravity, directional
+- block type (enviornment, enemy, player spawned, etc)
+
+
+
+REGAIN MANA BY CLEARNING LINES!
+
+Make this game a fast pace mode of tetris. clearning lines quickly with the aid of skills. Each monster is basically a puzzle to see how to manipulate the blocks to make the fastest line clears.
+
+keep track of number of moves + seconds taken for time records for standard fights (monster battles)
+
+------------
+
+TETRIS CONTROLS ON TOUCH SCREEN!
+
+2 finger controls
+
+a horizontal slider at the bottom of the screen
+a button in the top left corner.
+
+To Rotate: press button
+To Aim: press, hold and drag the slider
+To Drop: While aiming, press button
+
+OR
+
+That button at the top left to rotate, thats actually just the falling block. The corner button is actually a fall button.
+To Rotate: tapping on the falling block
+To Drop: press corner button
+
+To Do Skills!
+Swipe screen in a direction
+	left-right, up-down
+Buttons on the side...(?)

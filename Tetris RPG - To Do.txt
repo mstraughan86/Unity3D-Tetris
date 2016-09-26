@@ -1,0 +1,94 @@
+GENERAL LINKS:
+http://noobtuts.com/unity
+http://coffeebreakcodes.com/sample-projects-unity/2d-tetris-game-tutorial-unity3d/
+http://noobtuts.com/unity/2d-tetris-game
+http://www.paulgraham.com/progbot.html
+
+
+
+
+
+http://stackoverflow.com/questions/427760/when-to-use-if-else-if-else-over-switch-statments-and-vice-versa
+http://answers.unity3d.com/questions/809341/how-in-c-do-you-put-keyinput-into-variable.html
+http://stackoverflow.com/questions/6989647/console-readkey-and-switch-statement-using-letters
+http://answers.unity3d.com/questions/766353/how-to-save-keyboard-input-in-a-variable.html
+http://stackoverflow.com/questions/233850/tetris-piece-rotation-algorithm
+http://gamedev.stackexchange.com/questions/30849/tetris-effective-rotation
+
+https://tetris.wiki/Tetris_Guideline
+http://www.tetrisconcept.com/p/start.html
+
+READ THIS
+****
+http://forum.unity3d.com/threads/in-unity-is-there-a-main-script-class-for-the-game-or-youjust-make-small-scripts.195622/
+****
+
+==========================================
+I am working on the 7 element bag randomizer.
+Create a list of 7 elements, shuffle it, push those elements to the 128 master stack.
+Repeat until 128 is filled up. RECURSION OPPORTUNITY!
+
+Create rule for creating more stuff.
+
+Opportunity to create a data structure. Opportunity to create a List manipulation algorithm! Opportunity to do Log-O!
+
+http://stackoverflow.com/questions/273313/randomize-a-listt
+
+
+*****
+Afterwards, create a rotation algorithm for the different rotation schemes.
+make a pivot point? Hardcode the different rotation states?
+Where to store this data? In a separate thing? Or what?
+CONSIDER!!!: Recreate the block group data structure into a 4x4 matrix.
+	Then can do matrix math on it to transform it in ANYWAY whatsoever. 
+	Can do 4 states for each group, and depending on what button is pressed, transform it one way or another. 
+	Or just keep the states in a list and iterate through.
+	Math would be a good example of what I can do though. 
+
+http://stackoverflow.com/questions/233850/tetris-piece-rotation-algorithm
+http://gamedev.stackexchange.com/questions/30849/tetris-effective-rotation
+http://jsfiddle.net/rg5qu/
+
+==========================================
+using System;
+using System.Collections.Generic;
+using System.Threading;
+
+namespace SimpleLottery
+{
+  class Program
+  {
+    private static void Main(string[] args)
+    {
+      var numbers = new List<int>(Enumerable.Range(1, 75));
+      numbers.Shuffle();
+      Console.WriteLine("The winning numbers are: {0}", string.Join(",  ", numbers.GetRange(0, 5)));
+    }
+  }
+
+  public static class ThreadSafeRandom
+  {
+      [ThreadStatic] private static Random Local;
+
+      public static Random ThisThreadsRandom
+      {
+          get { return Local ?? (Local = new Random(unchecked(Environment.TickCount * 31 + Thread.CurrentThread.ManagedThreadId))); }
+      }
+  }
+
+  static class MyExtensions
+  {
+    public static void Shuffle<T>(this IList<T> list)
+    {
+      int n = list.Count;
+      while (n > 1)
+      {
+        n--;
+        int k = ThreadSafeRandom.ThisThreadsRandom.Next(n + 1);
+        T value = list[k];
+        list[k] = list[n];
+        list[n] = value;
+      }
+    }
+  }
+}
